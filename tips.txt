@@ -1,0 +1,79 @@
+names of models must be singular =>
+Game,Device,Dategory
+
+name of controller,Services must be plural => 
+Game[s],Device[s],Categor[ies],IGame[s]Service
+
+fluent api to add configuration =>
+onModelCreating()
+**composite primary key
+**insert initial data into tables
+
+the browser cache the icon image ,you have to clear cache
+
+libman => library manager
+json file contains all clinet side libraries which installed 
+to have control over it update , delete
+
+
+when you want to link file in head of _layout =>
+just drag and drop it
+
+
+to make Your [HttpPost] Action capaple of accept files ,
+you must add enctype = "multipart/form-data" to form<enctype = "multipart/form-data">
+
+to can add multible files to one folders use this format -/(,)
+Services/(IXService.cs , XService.cs)
+
+nameof(X) inside view('') better than hardcoded names
+to alert you in compile time when you try to change action names
+
+AsNoTracking() => Tells EF no trck for fetched data from DB which increase performance
+
+IWebHostEnvironment built in Service used to get paths in solution exploerr (WWW.Root)
+
+4 ways to map viewModl To DomainModel => maunal , automapper, profile , ..
+
+how you store image in your server
+	var _imagePath = $"{webHostEnvironment.WebRootPath}/assets/images/games";
+	var imageName = $"{Guid.NewGuid()}{Path.GetExtension(model.CoverUrl.FileName)}";
+	var path = Path.Combine(_imagePath, imageName) ;            
+	//create place for new image and dispose it
+	using var stream = File.Create(path) ;
+	await model.CoverUrl.CopyToAsync(stream) ;
+
+
+[extension] hekp in validate extensions in apis , not good in MVC
+
+try to store hard coded values inside static class 
+
+custom attributes are server side , how you make it client validation
+add additional-methods.min.js to your view
+use attributes to handle clint side
+
+
+custom layout added to site.css
+
+prefered to seprate js files inside ww.root and add to script tag
+asp-append-version = 'true' to allow you modify existing js fies whiout need to remove cash 
+
+the order of css and js files links matters 
+becarful the site.css &  site.js  should be in the bottom to ovverride anything 
+
+ row class in bootstrap splitted into 12 colums
+ col-lg-4 => in large and bigger take 4 columns in each row
+ col-md-5 => in midium and bigger take 6 columns in each row
+
+ when you need to add $ after @ you need to use ()
+<div class="card-body" style="background-image:url(@($"{FileSettings.ImagePath}/{}"))">
+
+
+404 due to notfound 
+405 server error due to null
+
+Ok() => return status code
+# in href make page move Up
+
+sweetalert2 => good package to modal confimation 
+ btn.parents('tr').fadeOut(); => to get the neareset parent to remove it without refresh page

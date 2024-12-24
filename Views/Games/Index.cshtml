@@ -1,0 +1,78 @@
+﻿@model List<Game>
+@{
+    ViewData["Title"] = "Create";
+}
+<h1>Index Games</h1>
+<hr />
+
+<a class="btn btn-secondary" asp-action="Create">
+    <i class="bi bi-plus-circle-dotted"></i>
+    Add New game
+</a>
+
+
+@if (Model.Count == 0)
+{
+    <p class="text-primary-50 text-center ">No Games Yet!!</p>
+}
+
+else
+{
+    <div class="mt-5">
+
+        <table class="table table-bordered border-primary">
+
+            <tbody>
+                @foreach (var game in Model) 
+                {
+                    <tr class="border-1 border-success ">
+                      
+                        <td>
+                            <div class="d-flex">
+                                <div class="pe-4 ">
+                                    <img src="@($"{FileSettings.ImagePath}/{game.CoverUrl}")" style="max-width:90px;" />
+                                </div>
+                                <div class="d-flex flex-column justify-content-center ">
+                                     <h4 class="text-light">@game.Name</h4>
+                                     <h5 >@game.Category.Name</h5>
+                                </div>
+
+                            </div>
+                        </td>
+
+                        <td class="align-middle">
+                            <div class="d-flex justify-content-end">
+                                <a  class="btn btn-info rounded rounded-2 me-2" asp-action="Update" asp-route-id="@game.Id">
+                                    <i class="bi bi-pencil-fill"></i>
+                                </a>
+                                <a href="#" class="btn btn-danger rounded rounded-2 js-delete" data-id = "@game.Id" >
+                                    <i class="bi bi-trash3"></i>
+                                </a>
+                            </div>
+
+                           
+                        </td>
+
+
+
+                    </tr>
+                }
+
+
+
+            </tbody>
+
+        </table>
+
+    </div>
+    
+}
+
+
+@section Scripts {
+    <script src="~/js/Games-Deletion-Modal.js" asp-append-version="true"></script>
+    
+}
+
+
+

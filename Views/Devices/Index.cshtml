@@ -1,0 +1,40 @@
+﻿@model List<Device>
+    @{
+    ViewData["Title"] = "Devices Index Page";
+    }
+
+    <h1>Index Devices</h1>
+    <hr />
+
+
+
+   
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Name</th>
+                <th scope="col">Icon</th>
+                
+            </tr>
+
+        </thead>
+
+        <tbody>
+           
+
+                @foreach (var item in Model)
+                {
+                 <tr class="table-light">
+                    <th scope="row">@item.Id</th>
+                    <td>@item.Name</td>
+                    <td><i class="@item.IconUrL"></i></td>
+                 </tr>
+
+                }
+
+
+        </tbody>
+        
+    </table>
+        
